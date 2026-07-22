@@ -1,0 +1,44 @@
+{
+  "debug.internalConsoleOptions": "openOnSessionStart",
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [
+      80
+    ],
+    "editor.selectionHighlight": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": "off"
+  },
+  "files.watcherExclude": {
+    "**/.git/**": true,
+    "**/build/**": true,
+    "**/.dart_tool/**": true,
+    "**/.idea/**": true,
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true
+  },
+  "search.exclude": {
+    "**/build": true,
+    "**/.dart_tool": true,
+    "**/.idea": true,
+    "**/*.g.dart": true,
+    "**/*.freezed.dart": true
+  },
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/build": true,
+    "**/.idea": true,
+  },
+  "dart.previewFlutterUiGuides": false,
+  "dart.showTodos": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.minimap.enabled": false,
+  "breadcrumbs.enabled": false,
+  "editor.codeLens": false,
+  "extensions.ignoreRecommendations": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.organizeImports": "always",
+  }
+}

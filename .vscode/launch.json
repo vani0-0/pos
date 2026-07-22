@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    // Mock
+    {
+      "name": "POS MOCK",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define",
+        "ENV=mock"
+      ],
+      "flutterMode": "debug"
+    },
+    // Dev
+    {
+      "name": "POS MOCK",
+      "request": "launch",
+      "type": "dart",
+      "args": [
+        "--dart-define",
+        "ENV=development"
+      ],
+      "flutterMode": "debug"
+    }
+  ]
+}
