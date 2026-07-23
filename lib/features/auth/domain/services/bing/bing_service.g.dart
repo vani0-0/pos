@@ -33,7 +33,7 @@ final class BingServiceProvider
   BingService create() => BingService();
 }
 
-String _$bingServiceHash() => r'29c66304204d7b5c9809af8bf1d58e9a35281bf5';
+String _$bingServiceHash() => r'0faa144e75cf97369f7422f0806d51bde11f6f6d';
 
 abstract class _$BingService extends $AsyncNotifier<String> {
   FutureOr<String> build();

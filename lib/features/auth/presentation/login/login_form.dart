@@ -99,6 +99,7 @@ class LoginForm extends HookConsumerWidget {
 
                   TextFormField(
                     focusNode: employeeIdFocus,
+                    enabled: !state.isSubmitting,
                     textInputAction: TextInputAction.next,
                     onChanged: viewModel.updateEmployeeId,
                     onFieldSubmitted: (_) {
@@ -115,6 +116,7 @@ class LoginForm extends HookConsumerWidget {
 
                   TextFormField(
                     focusNode: passwordFocus,
+                    enabled: !state.isSubmitting,
                     obscureText: !state.showPassword,
                     textInputAction: TextInputAction.done,
                     onChanged: viewModel.updatePassword,
@@ -178,9 +180,9 @@ class LoginForm extends HookConsumerWidget {
                     duration: const Duration(milliseconds: 200),
                     curve: Curves.easeOut,
                     child: AnimatedOpacity(
-                      opacity: state.formError == null ? 0 : 1,
+                      opacity: state.errorMessage == null ? 0 : 1,
                       duration: const Duration(milliseconds: 200),
-                      child: state.formError == null
+                      child: state.errorMessage == null
                           ? const SizedBox.shrink()
                           : Container(
                               padding: const EdgeInsets.all(AppSpacing.md),
@@ -199,7 +201,7 @@ class LoginForm extends HookConsumerWidget {
                                   const SizedBox(width: AppSpacing.sm),
                                   Expanded(
                                     child: Text(
-                                      state.formError!,
+                                      state.errorMessage!,
                                       style: theme.textTheme.bodyMedium?.copyWith(
                                         color: colorScheme.onErrorContainer,
                                       ),

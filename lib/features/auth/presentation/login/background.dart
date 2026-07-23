@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:performance_online_system/domain/services/bing/bing_service.dart';
+import 'package:performance_online_system/features/auth/domain/services/bing/bing_service.dart';
 
 class BingWallpaper extends ConsumerWidget {
   const BingWallpaper({super.key});

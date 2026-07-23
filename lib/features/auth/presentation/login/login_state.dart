@@ -10,6 +10,6 @@ abstract class LoginState with _$LoginState {
     @Default(false) bool showPassword,
     @Default(false) bool isSubmitting,
 
-    String? formError,
+    String? errorMessage,
   }) = _LoginState;
 }

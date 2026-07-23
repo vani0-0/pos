@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'login_view_model.dart';
+part of 'session_service.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,51 +9,51 @@ part of 'login_view_model.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(LoginViewModel)
-final loginViewModelProvider = LoginViewModelProvider._();
+@ProviderFor(SessionService)
+final sessionServiceProvider = SessionServiceProvider._();
 
-final class LoginViewModelProvider
-    extends $NotifierProvider<LoginViewModel, LoginState> {
-  LoginViewModelProvider._()
+final class SessionServiceProvider
+    extends $NotifierProvider<SessionService, SessionState> {
+  SessionServiceProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'loginViewModelProvider',
+        name: r'sessionServiceProvider',
         isAutoDispose: true,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$loginViewModelHash();
+  String debugGetCreateSourceHash() => _$sessionServiceHash();
 
   @$internal
   @override
-  LoginViewModel create() => LoginViewModel();
+  SessionService create() => SessionService();
 
   /// {@macro riverpod.override_with_value}
-  Override overrideWithValue(LoginState value) {
+  Override overrideWithValue(SessionState value) {
     return $ProviderOverride(
       origin: this,
-      providerOverride: $SyncValueProvider<LoginState>(value),
+      providerOverride: $SyncValueProvider<SessionState>(value),
     );
   }
 }
 
-String _$loginViewModelHash() => r'6c375e1c0be457fbf60a0dfb4659c4b1a26cf44c';
+String _$sessionServiceHash() => r'e9bc7b8bb2f562660ddaee63e997cc10f46b93bc';
 
-abstract class _$LoginViewModel extends $Notifier<LoginState> {
-  LoginState build();
+abstract class _$SessionService extends $Notifier<SessionState> {
+  SessionState build();
   @$mustCallSuper
   @override
   WhenComplete runBuild() {
-    final ref = this.ref as $Ref<LoginState, LoginState>;
+    final ref = this.ref as $Ref<SessionState, SessionState>;
     final element =
         ref.element
             as $ClassProviderElement<
-              AnyNotifier<LoginState, LoginState>,
-              LoginState,
+              AnyNotifier<SessionState, SessionState>,
+              SessionState,
               Object?,
               Object?
             >;

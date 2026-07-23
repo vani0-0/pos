@@ -14,7 +14,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$LoginState {
 
- LoginFormState get form; bool get showPassword; bool get isSubmitting; String? get formError;
+ LoginFormState get form; bool get showPassword; bool get isSubmitting; String? get errorMessage;
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -25,16 +25,16 @@ $LoginStateCopyWith<LoginState> get copyWith => _$LoginStateCopyWithImpl<LoginSt
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginState&&(identical(other.form, form) || other.form == form)&&(identical(other.showPassword, showPassword) || other.showPassword == showPassword)&&(identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting)&&(identical(other.formError, formError) || other.formError == formError));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is LoginState&&(identical(other.form, form) || other.form == form)&&(identical(other.showPassword, showPassword) || other.showPassword == showPassword)&&(identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,form,showPassword,isSubmitting,formError);
+int get hashCode => Object.hash(runtimeType,form,showPassword,isSubmitting,errorMessage);
 
 @override
 String toString() {
-  return 'LoginState(form: $form, showPassword: $showPassword, isSubmitting: $isSubmitting, formError: $formError)';
+  return 'LoginState(form: $form, showPassword: $showPassword, isSubmitting: $isSubmitting, errorMessage: $errorMessage)';
 }
 
 
@@ -45,7 +45,7 @@ abstract mixin class $LoginStateCopyWith<$Res>  {
   factory $LoginStateCopyWith(LoginState value, $Res Function(LoginState) _then) = _$LoginStateCopyWithImpl;
 @useResult
 $Res call({
- LoginFormState form, bool showPassword, bool isSubmitting, String? formError
+ LoginFormState form, bool showPassword, bool isSubmitting, String? errorMessage
 });
 
 
@@ -62,12 +62,12 @@ class _$LoginStateCopyWithImpl<$Res>
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? form = null,Object? showPassword = null,Object? isSubmitting = null,Object? formError = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? form = null,Object? showPassword = null,Object? isSubmitting = null,Object? errorMessage = freezed,}) {
   return _then(_self.copyWith(
 form: null == form ? _self.form : form // ignore: cast_nullable_to_non_nullable
 as LoginFormState,showPassword: null == showPassword ? _self.showPassword : showPassword // ignore: cast_nullable_to_non_nullable
 as bool,isSubmitting: null == isSubmitting ? _self.isSubmitting : isSubmitting // ignore: cast_nullable_to_non_nullable
-as bool,formError: freezed == formError ? _self.formError : formError // ignore: cast_nullable_to_non_nullable
+as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
@@ -153,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( LoginFormState form,  bool showPassword,  bool isSubmitting,  String? formError)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( LoginFormState form,  bool showPassword,  bool isSubmitting,  String? errorMessage)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LoginState() when $default != null:
-return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.formError);case _:
+return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.errorMessage);case _:
   return orElse();
 
 }
@@ -174,10 +174,10 @@ return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.formError
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( LoginFormState form,  bool showPassword,  bool isSubmitting,  String? formError)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( LoginFormState form,  bool showPassword,  bool isSubmitting,  String? errorMessage)  $default,) {final _that = this;
 switch (_that) {
 case _LoginState():
-return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.formError);case _:
+return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.errorMessage);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -194,10 +194,10 @@ return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.formError
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( LoginFormState form,  bool showPassword,  bool isSubmitting,  String? formError)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( LoginFormState form,  bool showPassword,  bool isSubmitting,  String? errorMessage)?  $default,) {final _that = this;
 switch (_that) {
 case _LoginState() when $default != null:
-return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.formError);case _:
+return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.errorMessage);case _:
   return null;
 
 }
@@ -209,13 +209,13 @@ return $default(_that.form,_that.showPassword,_that.isSubmitting,_that.formError
 
 
 class _LoginState implements LoginState {
-  const _LoginState({this.form = const LoginFormState(), this.showPassword = false, this.isSubmitting = false, this.formError});
+  const _LoginState({this.form = const LoginFormState(), this.showPassword = false, this.isSubmitting = false, this.errorMessage});
   
 
 @override@JsonKey() final  LoginFormState form;
 @override@JsonKey() final  bool showPassword;
 @override@JsonKey() final  bool isSubmitting;
-@override final  String? formError;
+@override final  String? errorMessage;
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
@@ -227,16 +227,16 @@ _$LoginStateCopyWith<_LoginState> get copyWith => __$LoginStateCopyWithImpl<_Log
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoginState&&(identical(other.form, form) || other.form == form)&&(identical(other.showPassword, showPassword) || other.showPassword == showPassword)&&(identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting)&&(identical(other.formError, formError) || other.formError == formError));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _LoginState&&(identical(other.form, form) || other.form == form)&&(identical(other.showPassword, showPassword) || other.showPassword == showPassword)&&(identical(other.isSubmitting, isSubmitting) || other.isSubmitting == isSubmitting)&&(identical(other.errorMessage, errorMessage) || other.errorMessage == errorMessage));
 }
 
 
 @override
-int get hashCode => Object.hash(runtimeType,form,showPassword,isSubmitting,formError);
+int get hashCode => Object.hash(runtimeType,form,showPassword,isSubmitting,errorMessage);
 
 @override
 String toString() {
-  return 'LoginState(form: $form, showPassword: $showPassword, isSubmitting: $isSubmitting, formError: $formError)';
+  return 'LoginState(form: $form, showPassword: $showPassword, isSubmitting: $isSubmitting, errorMessage: $errorMessage)';
 }
 
 
@@ -247,7 +247,7 @@ abstract mixin class _$LoginStateCopyWith<$Res> implements $LoginStateCopyWith<$
   factory _$LoginStateCopyWith(_LoginState value, $Res Function(_LoginState) _then) = __$LoginStateCopyWithImpl;
 @override @useResult
 $Res call({
- LoginFormState form, bool showPassword, bool isSubmitting, String? formError
+ LoginFormState form, bool showPassword, bool isSubmitting, String? errorMessage
 });
 
 
@@ -264,12 +264,12 @@ class __$LoginStateCopyWithImpl<$Res>
 
 /// Create a copy of LoginState
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? form = null,Object? showPassword = null,Object? isSubmitting = null,Object? formError = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? form = null,Object? showPassword = null,Object? isSubmitting = null,Object? errorMessage = freezed,}) {
   return _then(_LoginState(
 form: null == form ? _self.form : form // ignore: cast_nullable_to_non_nullable
 as LoginFormState,showPassword: null == showPassword ? _self.showPassword : showPassword // ignore: cast_nullable_to_non_nullable
 as bool,isSubmitting: null == isSubmitting ? _self.isSubmitting : isSubmitting // ignore: cast_nullable_to_non_nullable
-as bool,formError: freezed == formError ? _self.formError : formError // ignore: cast_nullable_to_non_nullable
+as bool,errorMessage: freezed == errorMessage ? _self.errorMessage : errorMessage // ignore: cast_nullable_to_non_nullable
 as String?,
   ));
 }
